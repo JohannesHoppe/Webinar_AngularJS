@@ -9,12 +9,12 @@
 
     <script>
 
-        define("myFirstModule", [jQuery], function (jQuery) {
+        define("myFirstModule", ["jquery"], function (jquery) {
 
             var colorToChange = "red";
 
             var changeColor = function () {
-                jQuery("button").css("color", colorToChange);
+                jquery("button").css("color", colorToChange);
             };
 
             var setColor = function (color) {
@@ -22,7 +22,7 @@
             }
 
             var setup = function () {
-                jQuery("button").click(function () {
+                jquery("button").click(function () {
                     changeColor();
                 });
             }
