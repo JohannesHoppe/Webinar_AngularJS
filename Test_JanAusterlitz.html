@@ -34,6 +34,8 @@
 
         });
 
+        // see: http://requirejs.org/docs/api.html#pageload
+
         $(document).ready(function () {
             require(["myFirstModule"], function (myFirstModule) {
                 myFirstModule.setColor("blue");
