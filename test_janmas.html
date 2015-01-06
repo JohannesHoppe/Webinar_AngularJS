@@ -1,5 +1,5 @@
 <html>
-<<<<<<< HEAD
+
     <head>
        
         <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.15/require.js"></script>
@@ -46,59 +46,10 @@
     </script>
    
      </head>   
-=======
-    
-    <script src="https://code.jquery.com/jquery-1.11.2.js"></script>
-    <title>My first test</title>
-    
-        <script>
-
-            var myFirstModule = (function () {
-
-                // setup
-                var colorToChange = "red";
-
-                function changeColor() {
-                    $("button").css("color", colorToChange);
-                };
-
-                var setup = function() {
-                    $("button").click(function () {
-                        changeColor();
-                    });
-                }
-
-                var setColorToChange = function (color) {
-                    colorToChange = color;
-                }
-
-                return {
-                    setup: setup,
-                    setColorToChange: setColorToChange
-                }
-
-            })();
-
-
-            $(function () {
-                myFirstModule.setColorToChange("green");
-                myFirstModule.setup();
-            });
-
-    </script>
-    
->>>>>>> origin/master
 
     <body>
         
         <button>Test</button>
 
     </body>
-<<<<<<< HEAD
-=======
-    
-    
-
-
->>>>>>> origin/master
 </html>
