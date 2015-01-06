@@ -1,0 +1,47 @@
+<html>
+    
+    <script src="https://code.jquery.com/jquery-1.11.2.js"></script>
+    <title>My first test</title>
+    
+        <script>
+
+            var myFirstModule = (function () {
+
+                // setup
+                var _colorToChange = "red";
+
+                function changeColor() {
+                    $("button").css("color", _colorToChange);
+                };
+
+                var setup = function(colorToChange) {
+                    $("button").click(function () {
+                        _colorToChange = colorToChange;
+                        changeColor();
+                    });
+                }
+
+                return {
+                    setup: setup
+                }
+
+            })();
+
+
+            $(function() {
+                myFirstModule.setup("green");
+            });
+
+    </script>
+    
+
+    <body>
+        
+        <button>Test</button>
+
+    </body>
+    
+    
+
+
+</html>
