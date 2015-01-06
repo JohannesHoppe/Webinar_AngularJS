@@ -1,36 +1,43 @@
 <html>
-    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.15/require.js"></script>
     <script src="https://code.jquery.com/jquery-1.11.2.js"></script>
+	<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/require-domReady/2.0.1/domReady.js"></script>-->
     <title>My first test</title>
     
         <script>
 
-            var myFirstModule = (function () {
+         define("myFirstModule", ["jquery"], function (jquery) {
 
-                // setup
-                var colorToChange = "red";
+            var colorToChange = "red";
 
-                function changeColor() {
-                    $("button").css("color", colorToChange);
-                };
+            var changeColor = function () {
+                jquery("button").css("color", colorToChange);
+            };
 
-                var setup = function(color) {
-                    $("button").click(function () {
-					    colorToChange = color; 
-                        changeColor();
-                    });
-                }
+            var setColor = function (color) {
+                colorToChange = color;
+            }
 
-                return {
-                    setup: setup
-                }
+            var setup = function () {
+                jquery("button").click(function () {
+                    changeColor();
+                });
+            }
 
-            })();
+            return {
+                setColor: setColor,
+                setup: setup
+            }
 
-
-            $(function() {
-                myFirstModule.setup("blue");
-            });
+        });
+		
+		require(["myFirstModule", "domReady"], function (myFirstModule, domReady) {
+			domReady(function(){
+                myFirstModule.setColor("blue");
+                myFirstModule.setup();
+			});
+        });
+		
 
     </script>
     
