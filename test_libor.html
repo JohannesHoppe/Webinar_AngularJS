@@ -3,13 +3,12 @@
        
         <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.15/require.js"></script>
         <script src="https://code.jquery.com/jquery-1.11.2.js"></script>
-        <script src="https://cdnjs.com/libraries/require-domready"></script>
 
         <title>My first test</title>
 
     
     <script>
-
+      
         define("myFirstModule", ["jquery"], (function ($) {
 
             // setup
@@ -41,6 +40,10 @@
         //        myFirstModule.setup();
         //    })
         //});
+
+        define("myFirstModule", ["jquery"], (function ($) {
+            alert("Test to define the another module with the same name");
+        }));
 
         require(['domReady!'], function (doc) {
             require(["myFirstModule"], function (myFirstModule) {
