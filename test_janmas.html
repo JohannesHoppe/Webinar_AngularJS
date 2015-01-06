@@ -4,10 +4,11 @@
        
         <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.15/require.js"></script>
         <script src="https://code.jquery.com/jquery-1.11.2.js"></script>
+        <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/require-domReady/2.0.1/domReady.js"></script>-->
 
         <title>My first test</title>
 
-    
+
     <script>
 
         define("myFirstModule", ["jquery"], function ($) {
@@ -36,15 +37,22 @@
 
         });
 
-        require(['myFirstModule'], function(myFirstModule) {
-            $(function() {
+        require(['myFirstModule'], function (myFirstModule) {
+            $(function () {
                 myFirstModule.setColor("blue");
                 myFirstModule.setup();
             });
         });
 
+        //require(['domReady', 'myFirstModule'], function (domReady, myFirstModule) {
+        //    domReady(function() {
+        //        myFirstModule.setColor("blue");
+        //        myFirstModule.setup();
+        //    });
+        //});        
+
     </script>
-   
+
      </head>   
 
     <body>
