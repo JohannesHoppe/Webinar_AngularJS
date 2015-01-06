@@ -14,8 +14,9 @@
                     $("button").css("color", colorToChange);
                 };
 
-                var setup = function() {
+                var setup = function(color) {
                     $("button").click(function () {
+					    colorToChange = color; 
                         changeColor();
                     });
                 }
@@ -28,7 +29,7 @@
 
 
             $(function() {
-                myFirstModule.setup();
+                myFirstModule.setup("blue");
             });
 
     </script>
@@ -37,7 +38,7 @@
     <body>
         
         <button>Test</button>
-
+		
     </body>
     
     
