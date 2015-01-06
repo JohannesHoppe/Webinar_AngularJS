@@ -90,7 +90,6 @@ var myFirstModule = (function ($) {
 
 }(window.jQuery)
 
-``
 
 
 define("jquery", [], function() {
@@ -122,6 +121,27 @@ Task: refactor `test.html` to use the AMD (one single file first)
 1st challange: make myFirstModule module an AMD module  
 2nd challange: handle domReady (for the experts! ;-))  
 
+
+
+Boss --> require dependency
+
+
+## Subscriber / Publisher pattern to inform the ouside world!!
+
+* promises (AngularJS $q service)
+* jquery events
+
+
+
+```
+var $events = $({});
+
+$events.on('somethingHappens', function() {
+    alert("Something happened!");
+});
+
+$events.trigger('somethingHappens');
+```
 
 
 
