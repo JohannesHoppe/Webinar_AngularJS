@@ -152,3 +152,86 @@ $events.trigger('somethingHappens');
 * [Jam](http://jamjs.org/) 
 * [Bower](http://bower.io/)
 * [Yeoman](http://yeoman.io/) 
+
+
+# Result of day 1
+
+```html
+
+<!-- index.html -->
+<html>
+    <head>
+       
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.15/require.js"></script>
+        <title>My first test</title>
+    <script>
+
+        requirejs.config({
+            paths: {
+                'jquery': 'https://code.jquery.com/jquery-1.11.2',
+                'domReady': 'https://cdnjs.cloudflare.com/ajax/libs/require-domReady/2.0.1/domReady'
+            }
+        });
+
+        require(['myFirstModule', 'domReady!'], function (myFirstModule) {
+            myFirstModule.setColor("blue");
+            myFirstModule.setup();
+
+            // 
+            myFirstModule.$events.on("userDidSomething", function(data) {
+                alert("hallo" + data);
+            });
+
+
+        });
+
+    </script>
+   
+     </head>   
+
+    <body>
+        
+        <button>Test</button>
+
+    </body>
+</html>
+
+
+```
+
+```js
+
+// myFirstModule.js
+define(["jquery"], function ($) {
+
+    // setup
+    var colorToChange = "red";
+
+    var $events = $({});
+
+    var changeColor = function() {
+        $("button").css("color", colorToChange);
+    };
+
+    var setColor = function(color) {
+        colorToChange = color;
+    }
+
+    var setup = function() {
+        $("button").click(function() {
+            changeColor();
+            $events.trigger('userDidSomething', 'my text');
+        });
+    }
+
+    
+
+    return {
+        setColor: setColor,
+        setup: setup,
+        $events: $events
+    }
+
+});
+
+```
