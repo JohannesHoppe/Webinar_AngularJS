@@ -1,7 +1,7 @@
 angular.module('app', ['ngRoute'])
 
     .config([
-        '$routeProvider', function($routeProvider) {
+        '$routeProvider', function($routeProvider) { // test
 
         $routeProvider
             .when('/', {
