@@ -1,4 +1,4 @@
-# Modular AngularJS 
+# Day 2 - Modular AngularJS 
 
  We have two types of modules:
 
