@@ -1,8 +1,11 @@
 angular.module('app')
     .controller('secondControler_Libor', function ($scope) {
-        $scope.showIFrame = false;
+        $scope.iframe = {
+            show: false,
+            url: "http://zertifikate.commerzbank.de/News/News.aspx"
+        }
 
         $scope.setShowIFrame = function () {
-            $scope.showIFrame = true;
+            $scope.iframe.show = true;
         }
 });
