@@ -56,3 +56,32 @@ On Cross Orign errors, kill all chrome.exe processes and run:
 ```
 
 (because we are not working on a real webserver)
+
+
+## Task 3 - do CRUD
+
+The resource is described here:
+[http://ex.extjs-kochbuch.de/help](http://ex.extjs-kochbuch.de/help)
+
+As Johannes I want a simple CRM tool. The tool should be able to read, write, update and delete the entities from the resource 
+`http://ex.extjs-kochbuch.de/api/Customer`
+
+To inspect to traffic of that API, you can take a look at
+[http://ex.extjs-kochbuch.de/Kapitel4/Grid](http://ex.extjs-kochbuch.de/Kapitel4/Grid)
+
+AC:
+- must be able to manipulate all 100 entries
+	- adding a new customer
+	- delete an existing customer
+	- change data of the customer
+	- i want to see the customer in a list
+- AngularJS must be used (Kendo UI is accepted, ExtJS not)
+- optional: paging, sorting
+- optional: validation more than optional
+- everybody puts all his changes into his OWN subfolder!
+
+#### Help:
+
+* https://docs.angularjs.org/api/  
+* https://docs.angularjs.org/tutorial/step_01
+* Stackoverflow!

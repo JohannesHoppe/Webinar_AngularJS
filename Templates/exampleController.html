@@ -2,4 +2,26 @@
 
 <button ng-click="changeText()">Test</button>
 
+<div class="table-responsive">
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>FirstName</th>
+                <th>LastName</th>
+                <th>Mail</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="customer in customers">
+                <td ng-bind="customer.Id"></td>
+                <td ng-bind="customer.FirstName"></td>
+                <td ng-bind="customer.LastName"></td>
+                <td><a ng-href="mailto:{{customer.Mail}}" ng-bind="customer.Mail"></a></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+
 <a href="#screen1">See details page!</a>
