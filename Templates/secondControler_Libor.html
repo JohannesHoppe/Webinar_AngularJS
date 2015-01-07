@@ -1,4 +1,10 @@
 ﻿<h1>Second Template</h2>
 
 <!--<a href="http://zertifikate.commerzbank.de/Products/ProductSearchAdvanced.aspx?c=2195944">Details page</a>-->
-<iframe ng-src="http://zertifikate.commerzbank.de/Products/ProductSearchAdvanced.aspx?c=2195944"> </iframe>
+<div ng-hide="showIFrame">
+    <button ng-click="setShowIFrame()">Show iframe</button>
+</div>
+
+<div ng-show="showIFrame">
+    <iframe ng-src="http://zertifikate.commerzbank.de/Products/ProductSearchAdvanced.aspx?c=2195944"> </iframe>
+</div>
