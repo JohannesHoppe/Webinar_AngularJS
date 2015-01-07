@@ -1,9 +1,19 @@
 ﻿<h1 ng-bind="model.text"></h1>
 
 <button ng-click="changeText()">Test</button>
-<button ng-click="Reset()">Reset</button>
+<button ng-click="Reset()">Reset Customers</button>
+<button ng-click="ShowNew()">New Customer</button>
 
 <div class="table-responsive">
+
+    <div ng-show="IsNew()">
+        FirstName: <input ng-model="model.nc.FirstName" /><br />
+        LastName: <input ng-model="model.nc.LastName" /><br />
+        Mail: <input ng-model="model.nc.Mail" /><br />
+        <a href="" ng-click="AddNewCustomer()">Add</a>
+        <a href="" ng-click="CancelAdding()">Storno</a>
+    </div>
+
     <table class="table table-striped">
         <thead>
             <tr>

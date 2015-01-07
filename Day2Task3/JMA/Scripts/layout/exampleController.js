@@ -9,15 +9,36 @@ define([
             $scope.model = {
                 text: 'Hello World',
                 customers: [],
+                nc: null,
                 UpdateId: null
             }
 
             $scope.changeText = function() {
                 $scope.model.text = "Hello AngularJS";
-            }            
+            }
+
+            $scope.ShowNew = function () {
+                $scope.model.nc = {
+                    FirstName: "",
+                    LastName: "",
+                    Mail: ""
+                }
+            }
+
+            $scope.AddNewCustomer = function () {
+
+            }
+
+            $scope.CancelAdding = function () {
+                $scope.model.nc = null;
+            }
 
             $scope.IsUpdate = function (id) {
                 return $scope.model.UpdateId === id;
+            }
+
+            $scope.IsNew = function () {
+                return $scope.model.nc !== null;
             }
 
             $scope.Update = function (id) {
@@ -31,6 +52,17 @@ define([
                     }).
                 error(function (data, status, headers, config) {
                     alert('Error - Delete');
+                });
+            }
+
+            $scope.AddNewCustomer = function () {
+                $http.post('http://ex.extjs-kochbuch.de/api/Customer', $scope.model.nc).
+                success(function (data, status, headers, config) {
+                    $scope.model.nc = null;
+                    $scope.Get();
+                }).
+                error(function (data, status, headers, config) {
+                    alert('Error - Post');
                 });
             }
 
