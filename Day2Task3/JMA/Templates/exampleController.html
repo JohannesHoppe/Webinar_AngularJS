@@ -1,6 +1,7 @@
 ﻿<h1 ng-bind="model.text"></h1>
 
 <button ng-click="changeText()">Test</button>
+<button ng-click="Reset()">Reset</button>
 
 <div class="table-responsive">
     <table class="table table-striped">
@@ -10,14 +11,18 @@
                 <th>FirstName</th>
                 <th>LastName</th>
                 <th>Mail</th>
+                <th>Delete</th>
+                <th>Update</th>
             </tr>
         </thead>
         <tbody>
-            <tr ng-repeat="customer in customers">
+            <tr ng-repeat="customer in model.customers">
                 <td ng-bind="customer.Id"></td>
-                <td ng-bind="customer.FirstName"></td>
-                <td ng-bind="customer.LastName"></td>
-                <td><a ng-href="mailto:{{customer.Mail}}" ng-bind="customer.Mail"></a></td>
+                <td><span ng-show="!IsUpdate(customer.Id)">{{customer.FirstName}}</span><input ng-model="customer.FirstName" ng-show="IsUpdate(customer.Id)" ng-enter="Save(customer.Id, customer.FirstName, customer.LastName, customer.Mail)" /></td>
+                <td><span ng-show="!IsUpdate(customer.Id)">{{customer.LastName}}</span><input ng-model="customer.LastName" ng-show="IsUpdate(customer.Id)" ng-enter="Save(customer.Id, customer.FirstName, customer.LastName, customer.Mail)" /></td>
+                <td><a ng-href="mailto:{{customer.Mail}}" ng-bind="customer.Mail" ng-show="!IsUpdate(customer.Id)"></a><input ng-model="customer.Mail" ng-show="IsUpdate(customer.Id)" ng-enter="Save(customer.Id, customer.FirstName, customer.LastName, customer.Mail)" /></td>
+                <td><a href="" ng-click="Delete(customer.Id)">X</a></td>
+                <td><a href="" ng-click="Update(customer.Id)">U</a></td>
             </tr>
         </tbody>
     </table>
