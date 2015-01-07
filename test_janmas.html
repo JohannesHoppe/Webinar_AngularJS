@@ -1,70 +1,25 @@
 <html>
-
     <head>
-       
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.15/require.js"></script>
-        <script src="https://code.jquery.com/jquery-1.11.2.js"></script>
-        <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/require-domReady/2.0.1/domReady.js"></script>-->
-
+        <!--<script src="Scripts/require.js" data-main="Scripts/init"></script>-->
+        
+        <script src="Scripts/jquery-1.11.1.js"></script>
+        <script src="Scripts/angular.js"></script>
+        <script src="Scripts/exampleController.js"></script>
+        <script src="Scripts/buttonController.js"></script>        
         <title>My first test</title>
-
-
-    <script>
-
-        define("myFirstModule", ["jquery"], function ($) {
-
-            // setup
-            var colorToChange = "red";
-
-            var changeColor = function () {
-                $("button").css("color", colorToChange);
-            };
-
-            var setColor = function(color) {
-                colorToChange = color;
-            }
-
-            var setup = function() {
-                $("button").click(function () {
-                    changeColor();
-                });
-            }
-
-            return {
-                setColor: setColor,
-                setup: setup
-            }
-
-        });
-
-        //require(['myFirstModule'], function (myFirstModule) {
-        //    $(function () {
-        //        myFirstModule.setColor("blue");
-        //        myFirstModule.setup();
-        //    });
-        //});
-
-        require(['domReady!'], function (doc) {
-            require(["myFirstModule"], function (myFirstModule) {
-                myFirstModule.setColor("blue");
-                myFirstModule.setup();
-            })
-        });
-
-        //require(['domReady', 'myFirstModule'], function (domReady, myFirstModule) {
-        //    domReady(function() {
-        //        myFirstModule.setColor("blue");
-        //        myFirstModule.setup();
-        //    });
-        //});        
-
-    </script>
-
      </head>   
 
-    <body>
+    <body ng-app="exampleApp">
         
-        <button>Test</button>
+        <div ng-controller="exampleController">
+            
+        <h1 ng-bind="model.text"></h1>
+
+            <button ng-controller="buttonController" ng-click="changeCaption()"> {{model.buttonCaption}}</button>
+
+        </div>
+
+
 
     </body>
 </html>
