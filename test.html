@@ -1,46 +1,27 @@
 <html>
     <head>
        
-        <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.15/require.js"></script>-->
-        <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/require-domReady/2.0.1/domReady.js"></script>-->
-
-        <script src="https://code.jquery.com/jquery-1.11.2.js"></script>
-
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.15/require.js"></script>
         <title>My first test</title>
-
-    
     <script>
 
-        var myFirstModule = (function ($) {
-
-            // setup
-            var colorToChange = "red";
-
-            var changeColor = function () {
-                $("button").css("color", colorToChange);
-            };
-
-            var setColor = function(color) {
-                colorToChange = color;
+        requirejs.config({
+            paths: {
+                'jquery': 'https://code.jquery.com/jquery-1.11.2',
+                'domReady': 'https://cdnjs.cloudflare.com/ajax/libs/require-domReady/2.0.1/domReady'
             }
+        });
 
-            var setup = function() {
-                $("button").click(function () {
-                    changeColor();
-                });
-            }
-
-            return {
-                setColor: setColor,
-                setup: setup
-            }
-
-        })(window.jQuery);
-
-
-        $(function () {
+        require(['myFirstModule', 'domReady!'], function (myFirstModule) {
             myFirstModule.setColor("blue");
             myFirstModule.setup();
+
+            // 
+            myFirstModule.$events.on("userDidSomething", function(data) {
+                alert("hallo" + data);
+            });
+
+
         });
 
     </script>

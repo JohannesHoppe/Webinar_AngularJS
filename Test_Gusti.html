@@ -1,17 +1,20 @@
 <html>
+<head>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.15/require.js"></script>
     <script src="https://code.jquery.com/jquery-1.11.2.js"></script>
-	<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/require-domReady/2.0.1/domReady.js"></script>-->
-    <title>My first test</title>
-    
-        <script>
 
-         define("myFirstModule", ["jquery"], function (jquery) {
+    <title>My first test</title>
+
+
+    <script>
+
+        define("myFirstModule", ["jquery"], function ($) {
 
             var colorToChange = "red";
 
             var changeColor = function () {
-                jquery("button").css("color", colorToChange);
+                $("button").css("color", colorToChange);
             };
 
             var setColor = function (color) {
@@ -19,7 +22,7 @@
             }
 
             var setup = function () {
-                jquery("button").click(function () {
+                $("button").click(function () {
                     changeColor();
                 });
             }
@@ -30,25 +33,21 @@
             }
 
         });
-		
-		require(["myFirstModule", "domReady"], function (myFirstModule, domReady) {
-			domReady(function(){
+
+        $(function () {
+            require(["myFirstModule"], function (myFirstModule) {
                 myFirstModule.setColor("blue");
                 myFirstModule.setup();
-			});
+            });
         });
-		
 
     </script>
-    
 
-    <body>
-        
-        <button>Test</button>
-		
-    </body>
-    
-    
+</head>
 
+<body>
 
+    <button>Test</button>
+
+</body>
 </html>
