@@ -8,7 +8,7 @@ angular.module('app', ['ngRoute'])
                     templateUrl: 'Templates/exampleController.html',
                     controller: 'exampleController'
                 })
-				.when('/screen1', {
+                .when('/screen1', {
                     templateUrl: 'Templates/alexejController.html',
                     controller: 'alexejController'
                  });
