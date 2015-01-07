@@ -1,0 +1,25 @@
+<html>
+<head>
+    <!--<script src="Scripts/require.js" data-main="Scripts/init"></script>-->
+
+    <script src="Scripts/jquery-1.11.1.js"></script>
+    <script src="Scripts/angular.js"></script>
+    <script src="Scripts/exampleController_Gusti.js"></script>
+
+    <title>My first test</title>
+</head>
+
+<body ng-app="exampleApp">
+
+    <div ng-controller="exampleController as vm">
+
+        <h1 ng-bind="vm.model.text"></h1>
+
+        <button ng-click="vm.changeText()">Test</button>
+
+    </div>
+
+
+
+</body>
+</html>
