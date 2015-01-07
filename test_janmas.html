@@ -37,11 +37,18 @@
 
         });
 
-        require(['myFirstModule'], function (myFirstModule) {
-            $(function () {
+        //require(['myFirstModule'], function (myFirstModule) {
+        //    $(function () {
+        //        myFirstModule.setColor("blue");
+        //        myFirstModule.setup();
+        //    });
+        //});
+
+        require(['domReady!'], function (doc) {
+            require(["myFirstModule"], function (myFirstModule) {
                 myFirstModule.setColor("blue");
                 myFirstModule.setup();
-            });
+            })
         });
 
         //require(['domReady', 'myFirstModule'], function (domReady, myFirstModule) {
