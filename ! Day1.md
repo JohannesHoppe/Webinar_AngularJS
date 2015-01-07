@@ -1,4 +1,4 @@
-# Modules
+# Day 1 - Modules
 
 Johannes three principles of modular JavaScript:
 
