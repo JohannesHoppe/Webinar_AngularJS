@@ -38,18 +38,21 @@ Change the text of the heading on button click
 AngularJS Controllers are driven by MVC + Router. 
 
 
-
-```
-"C:\Program Files (x86)\Google\Chrome\Application\chrome.exe" --disable-web-security
-```
-
-
 ## Task 2
 
 As Johannes I want two pages on the demo application.
-On the second screen I want to see an Iframe with a products detail page. (we call it coexistance). Having ng-show somewhere applied would be nice. (button: show iframe!)
+On the second screen I want to see an Iframe with a products detail page. (we call it coexistance). Having ng-show somewhere applied would be nice. (button: "show iframe!")
 
 AC
 - must implemented ngRoute.  
 - "chrome --disable-web-security" is accapted  
 - everybody creates an own template  
+
+
+
+On Cross Orign errors, kill all chrome.exe processes and run:
+```
+"C:\Program Files (x86)\Google\Chrome\Application\chrome.exe" --disable-web-security
+```
+
+(because we are not working on a real webserver)
