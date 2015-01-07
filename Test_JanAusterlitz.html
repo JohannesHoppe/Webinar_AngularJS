@@ -1,55 +1,25 @@
 <html>
 <head>
+    <!--<script src="Scripts/require.js" data-main="Scripts/init"></script>-->
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.15/require.js"></script>
-    <script src="https://code.jquery.com/jquery-1.11.2.js"></script>
+    <script src="Scripts/jquery-1.11.1.js"></script>
+    <script src="Scripts/angular.js"></script>
+    <script src="Scripts/exampleControllerJAU.js"></script>
 
     <title>My first test</title>
-
-
-    <script>
-
-        define("myFirstModule", ["jquery"], function (jquery) {
-
-            var colorToChange = "red";
-
-            var changeColor = function () {
-                jquery("button").css("color", colorToChange);
-            };
-
-            var setColor = function (color) {
-                colorToChange = color;
-            }
-
-            var setup = function () {
-                jquery("button").click(function () {
-                    changeColor();
-                });
-            }
-
-            return {
-                setColor: setColor,
-                setup: setup
-            }
-
-        });
-
-        // see: http://requirejs.org/docs/api.html#pageload
-
-        $(document).ready(function () {
-            require(["myFirstModule"], function (myFirstModule) {
-                myFirstModule.setColor("blue");
-                myFirstModule.setup();
-            });
-        });
-
-    </script>
-
 </head>
 
-<body>
+<body ng-app="exampleApp">
 
-    <button>Test</button>
+    <div ng-controller="exampleController">
+
+        <h1 ng-bind="model.text"></h1>
+
+        <button ng-click="changeTitle()">Test</button>
+
+    </div>
+
+
 
 </body>
 </html>
