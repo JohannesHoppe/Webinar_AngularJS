@@ -1,4 +1,4 @@
-angular.module('exampleApp', [])
+angular.module('app')
 
     .controller('exampleController', function ($scope) {
 
@@ -6,7 +6,7 @@ angular.module('exampleApp', [])
             text: 'Hello World'
         }
 
-        $scope.changeTitle = function () {
-            $scope.model.text = "Hello Austy!";
+        $scope.changeText = function () {
+            $scope.model.text = "Hello AngularJS";
         }
     });
