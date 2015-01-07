@@ -69,7 +69,8 @@ As Johannes I want a simple CRM tool. The tool should be able to read, write, up
 To inspect to traffic of that API, you can take a look at
 [http://ex.extjs-kochbuch.de/Kapitel4/Grid](http://ex.extjs-kochbuch.de/Kapitel4/Grid)
 
-AC:
+#### AC:
+
 - must be able to manipulate all 100 entries
 	- adding a new customer
 	- delete an existing customer
@@ -78,7 +79,7 @@ AC:
 - AngularJS must be used (Kendo UI is accepted, ExtJS not)
 - optional: paging, sorting
 - optional: validation more than optional
-- everybody puts all his changes into his OWN subfolder!
+- everybody puts all his changes into his OWN subfolder on **/Day2Task3/YourName** !
 
 #### Help:
 
