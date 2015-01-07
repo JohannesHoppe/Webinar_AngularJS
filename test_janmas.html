@@ -3,23 +3,20 @@
         <!--<script src="Scripts/require.js" data-main="Scripts/init"></script>-->
         
         <script src="Scripts/jquery-1.11.1.js"></script>
+        
         <script src="Scripts/angular.js"></script>
-        <script src="Scripts/exampleController.js"></script>
-        <script src="Scripts/buttonController_janmas.js"></script>        
+        <script src="Scripts/angular-route.js"></script>
+        
+        <script src="Scripts/app-janmas.js"></script>
+        <script src="Scripts/exampleController-janmas.js"></script>
+        <script src="Scripts/screenController-janmas.js"></script>
+
         <title>My first test</title>
      </head>   
 
-    <body ng-app="exampleApp">
+    <body ng-app="app">
         
-        <div ng-controller="exampleController">
-            
-        <h1 ng-bind="model.text"></h1>
-
-            <button ng-controller="buttonController" ng-click="changeCaption()"> {{model.buttonCaption}}</button>
-
-        </div>
-
-
+        <div ng-view></div>
 
     </body>
 </html>
