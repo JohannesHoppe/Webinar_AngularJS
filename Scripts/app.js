@@ -1,3 +1,27 @@
+angular.module('app', ['ngRoute'])
+
+    .config([
+        '$routeProvider', function($routeProvider) {
+
+            $routeProvider
+                .when('/', {
+                    templateUrl: 'Templates/exampleController.html',
+                    controller: 'exampleController'
+                });
+
+        }
+    ]);
+
+
+
+
+
+
+
+
+
+
+/*
 define(['myFirstModule', 'domReady!'], function (myFirstModule) {
 
     myFirstModule.setColor("blue");
@@ -10,3 +34,4 @@ define(['myFirstModule', 'domReady!'], function (myFirstModule) {
 
 
 });
+*/
