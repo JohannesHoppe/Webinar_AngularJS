@@ -1,4 +1,4 @@
-angular.module('exampleApp', [])
+angular.module('app')
 
     .controller('exampleControllerDV', function ($scope) {
 
