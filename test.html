@@ -1,31 +1,7 @@
 <html>
     <head>
-       
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.15/require.js"></script>
+        <script src="Scripts/require.js" data-main="Scripts/init"></script>
         <title>My first test</title>
-    <script>
-
-        requirejs.config({
-            paths: {
-                'jquery': 'https://code.jquery.com/jquery-1.11.2',
-                'domReady': 'https://cdnjs.cloudflare.com/ajax/libs/require-domReady/2.0.1/domReady'
-            }
-        });
-
-        require(['myFirstModule', 'domReady!'], function (myFirstModule) {
-            myFirstModule.setColor("blue");
-            myFirstModule.setup();
-
-            // 
-            myFirstModule.$events.on("userDidSomething", function(data) {
-                alert("hallo" + data);
-            });
-
-
-        });
-
-    </script>
-   
      </head>   
 
     <body>

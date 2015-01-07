@@ -20,12 +20,9 @@ define(["jquery"], function ($) {
         });
     }
 
-    
-
     return {
         setColor: setColor,
         setup: setup,
         $events: $events
     }
-
 });
