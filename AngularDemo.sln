@@ -3,6 +3,12 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AngularDemo", "AngularDemo.csproj", "{373A6B68-3FDD-4880-A6D6-5E7F348E9069}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Documentation", "Documentation", "{996AF29B-5F1C-4265-922E-5E1B546256CC}"
+	ProjectSection(SolutionItems) = preProject
+		! Day1.md = ! Day1.md
+		! Day2.md = ! Day2.md
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
