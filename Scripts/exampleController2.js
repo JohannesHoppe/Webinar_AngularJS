@@ -6,7 +6,7 @@ angular.module('app')
             text: 'Hello World'
         }
 
-        $scope.changeText = function () {
+        $scope.changeText = function() {
             $scope.model.text = "Hello AngularJS";
         }
     });

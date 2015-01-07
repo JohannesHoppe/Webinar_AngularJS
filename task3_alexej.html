@@ -3,23 +3,20 @@
         <!--<script src="Scripts/require.js" data-main="Scripts/init"></script>-->
         
         <script src="Scripts/jquery-1.11.1.js"></script>
+        
         <script src="Scripts/angular.js"></script>
-        <script src="Scripts/alexejController.js"></script>
+        <script src="Scripts/angular-route.js"></script>
+        
+        <script src="Scripts/appAlexej.js"></script>
+        <script src="Scripts/exampleController.js"></script>
+		<script src="Scripts/alexejController.js"></script>
 
         <title>My first test</title>
      </head>   
 
-    <body ng-app="exampleApp">
+    <body ng-app="app">
         
-        <div ng-controller="alexejController">
-            
-        <h1 ng-bind="model.text"></h1>
-
-            <button ng-click="changeText()" ng-bind="buttonText">First Text</button>
-
-        </div>
-
-
+        <div ng-view></div>
 
     </body>
 </html>

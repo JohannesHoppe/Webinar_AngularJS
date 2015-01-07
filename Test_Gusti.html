@@ -1,53 +1,22 @@
 <html>
-<head>
+    <head>
+        <!--<script src="Scripts/require.js" data-main="Scripts/init"></script>-->
+        
+        <script src="Scripts/jquery-1.11.1.js"></script>
+        
+        <script src="Scripts/angular.js"></script>
+        <script src="Scripts/angular-route.js"></script>
+        
+        <script src="Scripts/app_Gusti.js"></script>
+        <script src="Scripts/exampleController.js"></script>
+        <script src="Scripts/anotherViewController_Gusti.js"></script>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.15/require.js"></script>
-    <script src="https://code.jquery.com/jquery-1.11.2.js"></script>
+        <title>My first test</title>
+     </head>   
 
-    <title>My first test</title>
+    <body ng-app="app">
+        
+        <div ng-view></div>
 
-
-    <script>
-
-        define("myFirstModule", ["jquery"], function ($) {
-
-            var colorToChange = "red";
-
-            var changeColor = function () {
-                $("button").css("color", colorToChange);
-            };
-
-            var setColor = function (color) {
-                colorToChange = color;
-            }
-
-            var setup = function () {
-                $("button").click(function () {
-                    changeColor();
-                });
-            }
-
-            return {
-                setColor: setColor,
-                setup: setup
-            }
-
-        });
-
-        $(function () {
-            require(["myFirstModule"], function (myFirstModule) {
-                myFirstModule.setColor("blue");
-                myFirstModule.setup();
-            });
-        });
-
-    </script>
-
-</head>
-
-<body>
-
-    <button>Test</button>
-
-</body>
+    </body>
 </html>
