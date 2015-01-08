@@ -1,0 +1,22 @@
+<h1>Customer details</h1>
+
+<form role="form" class="form-horizontal" ng-submit="submitForm()" name="formController" >
+  
+    <div class="form-group">    
+        <label for="Firstname">First name:</label>    
+        <input ng-model="model.Customer.FirstName" type="text" name="FirstName" class="form-control" required>  
+    </div>
+      
+    <div class="form-group">
+        <label for="email">Last name:</label>
+        <input ng-model="model.Customer.LastName" type="text" name="LastName" class="form-control" required/>
+    </div>
+  
+    <div class="form-group">    
+        <label for="email">Email:</label>    
+        <input ng-model="model.Customer.Mail" type="Mail" class="form-control">
+    </div>  
+  
+    <button type="submit" class="btn btn-default">Save</button>
+</form>
+<a href="#">Back to customer list</a>

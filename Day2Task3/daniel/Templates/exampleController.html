@@ -1,0 +1,30 @@
+﻿<h1 ng-bind="model.text"></h1>
+
+<a ng-href="#/new">Add Customer</a>
+<div class="table-responsive">
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>FirstName</th>
+                <th>LastName</th>
+                <th>Mail</th>
+                <th>Edit</th>
+                <th>Delete</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="customer in customers">
+                <td ng-bind="customer.Id"></td>
+                <td ng-bind="customer.FirstName"></td>
+                <td ng-bind="customer.LastName"></td>
+                <td><a ng-href="mailto:{{customer.Mail}}" ng-bind="customer.Mail"></a></td>
+                <td><a ng-href="#/edit/{{customer.Id}}" class="btn btn-xs btn-primary" >Edit</a></td>
+                <td><button type="button" class="btn btn-xs btn-primary" ng-click="deleteCustomer(customer.Id)">Delete</button></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+
+<a href="#screen1">See details page!</a>
