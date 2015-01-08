@@ -1,0 +1,18 @@
+{
+    "name" : "cbindex-karma-testrunner-depedencies",
+    "version" : "1.2.3",
+    "description" : "Installs Karma Testrunner and dependencies (frameworks and matchers)",
+    "dependencies" : {
+        "karma":  "0.12.23",
+        "karma-jasmine":  "0.2.2",
+        "karma-requirejs":  "0.2.2",
+        "karma-chrome-launcher":  "0.1.4",
+        "karma-firefox-launcher":  "0.1.3",
+        "karma-ie-launcher":  "0.1.5",
+        "karma-cli":  "0.0.4",
+        "karma-jasmine-matchers":  "0.1.3",  
+        "karma-nested-reporter":  "0.1.3",
+        "karma-xml-reporter": "0.1.4"  
+    },
+    "private": true
+}
