@@ -1,16 +1,23 @@
 define([
     'angular',
-    'layout/layout'
+    'layout/layout',
+    'layout/resourceService'
 ], function(angular) {
 
     angular.module('layout')
-        .controller('exampleController', ['$scope', '$http', '$resource', function ($scope, $http, $resource) {
+        .controller('exampleController', ['$scope', '$http', '$resource', function ($scope, $http, $resource, Customer) {
+            var Customer = $resource('http://ex.extjs-kochbuch.de/api/Customer', { id: '@_id' },
+                {
+                    'query': { method: 'GET', url: 'http://ex.extjs-kochbuch.de/api/Customer', isArray: false }
+                });
+
             $scope.refresh = function () {
                 $http({
                     url: 'http://ex.extjs-kochbuch.de/api/Customer',
                     method: "GET"
                 }).success(function (data, status, headers, config) {
                     $scope.customers = data.Data;
+                    nextID();
                 }).
                     error(function (data, status, headers, config) {
                         alert("Error while refreshing customers.");
@@ -32,7 +39,6 @@ define([
                     });
                 }
             }
-
 
             $scope.reset = function () {
                 if (confirm("Would you like to reset the in-memory demo data to its initial state?")) {
@@ -56,17 +62,15 @@ define([
                     method: "PUT",
                     data: customer
                 }).success(function (data, status, headers, config) {
-                    alert('Add was successful.');
                     $scope.refresh();
                 }).
-                   error(function (data, status, headers, config) {
-                       alert('Add was unsuccessful.');
-                   });
+                error(function (data, status, headers, config) {
+                    alert('Add was unsuccessful.');
+                });
             }
             
-            $scope.displayedCollection = [].concat($scope.customers);
-
             $scope.addCustomer = function (newCustomer) {
+                newCustomer.Id = nextID();
                 $http({
                     url: 'http://ex.extjs-kochbuch.de/api/Customer',
                     method: "POST",
@@ -76,9 +80,19 @@ define([
                     $scope.newCustomer = null;
                     $scope.refresh();
                 }).
-                  error(function (data, status, headers, config) {
-                      alert('Add was unsuccessful.');
-                  });
+                error(function (data, status, headers, config) {
+                    alert('Add was unsuccessful.');
+                });
+            }
+
+            var nextID = function () {
+                var maxID = -1;
+                for (var customerID in $scope.customers) {
+                    if (customerID > maxID)
+                        maxID = customerID;
+                }
+
+                return maxID + 1;
             }
         }]);
 });
