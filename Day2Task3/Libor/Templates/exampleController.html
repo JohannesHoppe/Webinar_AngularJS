@@ -1,0 +1,86 @@
+﻿<button type="button" ng-click="addNew = !addNew" class="btn btn-sm btn-success">
+			<i class="glyphicon glyphicon-plus">
+			</i> Add new customer
+</button>
+
+<button type="button" ng-click="search = !search" class="btn btn-sm btn-primary">
+			<i class="glyphicon glyphicon-search">
+			</i> Search
+</button>
+
+
+
+<table st-table="displayedCollection" st-safe-src="customers" class="table table-striped">
+	<thead>
+	<tr>
+        <th st-sort="Id">Id</th>
+		<th st-sort="FirstName">First Name</th>
+		<th st-sort="LastName">Last Name</th>
+		<th st-sort="EmailName">Email</th>
+	</tr>
+	</thead>
+	<tbody>
+        
+        <tr ng-if="addNew">
+            <td >
+                <!--<input class="form-control" type="number" ng-model="newCustomer.Id" />-->
+            </td>
+            <td>
+                <input class="form-control" type="text" ng-model="newCustomer.FirstName" required/>
+            </td>
+
+            <td>
+                <input class="form-control" type="text" ng-model="newCustomer.LastName" />
+            </td>
+
+            <td>
+                <input class="form-control" type="text" ng-model="newCustomer.Mail" />
+            </td>
+            <td>
+                <button class="btn btn-sm btn-success glyphicon glyphicon-ok" ng-click="addCustomer(newCustomer)"></button>
+            </td>
+        </tr>
+
+        <tr ng-if="search">
+		    <th colspan="5"><input st-search="" class="form-control" placeholder="global search ..." type="text"/></th>
+        </tr>
+	<tr ng-repeat="customer in displayedCollection">
+		<td>
+            {{customer.Id}}
+		</td>
+		<td>
+            <span ng-if="!customer.$edit">{{customer.FirstName}}</span>
+            <div ng-if="customer.$edit"><input class="form-control" type="text" ng-model="customer.FirstName" /></div>
+		</td>
+		<td>
+            <span ng-if="!customer.$edit">{{customer.LastName}}</span>
+            <div ng-if="customer.$edit"><input class="form-control" type="text" ng-model="customer.LastName" /></div>
+		</td>
+		<td>
+          <button ng-if="!customer.$edit" class="btn btn-sm" popover-placement="top" popover="{{customer.Mail}}" type="button">
+				<i class="glyphicon glyphicon-eye-open"></i>
+			</button>
+           <a ng-if="!customer.$edit" ng-href="mailto:{{customer.Mail}}">email</a>
+           <div ng-if="customer.$edit"><input class="form-control" type="email" ng-model="customer.Mail" /></div>
+           
+		</td>
+        <td>
+            <a ng-if="!customer.$edit" href="" class="btn btn-sm btn-primary glyphicon glyphicon-pencil" ng-click="customer.$edit = true"></a>
+            <a ng-if="customer.$edit" href="" class="btn btn-sm btn-success glyphicon glyphicon-ok" ng-click="updateCustomer(customer)"></a>
+            <a href="" class="btn btn-sm btn-danger glyphicon glyphicon-remove" ng-click="deleteCustomer(customer)"></a>
+        </td>
+        <td></td>
+	</tr>
+	</tbody>
+    <tfoot>
+			<tr>
+				<td colspan="5" class="text-center">
+					<div st-pagination="1" st-items-by-page="10" st-displayed-pages="7"></div>
+				</td>
+			</tr>
+		</tfoot>
+</table>
+<button type="button" ng-click="reset()" class="btn btn-sm btn-danger">
+			<i class="glyphicon glyphicon-refresh">
+			</i> RESET
+</button>
