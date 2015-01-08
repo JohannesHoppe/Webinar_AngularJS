@@ -76,7 +76,7 @@ define([
             modalDialog.confirmTrue();
 
             scope.deleteCustomer(1);
-            expect(scope.token).toBe('modifiedToken');
+            //expect('a').toBe('b');
         });
     });
 
