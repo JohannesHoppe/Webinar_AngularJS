@@ -140,11 +140,16 @@
       <DependentUpon>jquery-1.11.1.js</DependentUpon>
     </None>
     <Content Include="Scripts\jquery-1.11.1.js" />
+    <Content Include="Scripts\layout\customerServiceSpec.js" />
     <Content Include="Scripts\layout\customerDetail.js" />
     <Content Include="Scripts\layout\customerService.js" />
     <Content Include="Scripts\layout\exampleController.js" />
     <Content Include="Scripts\layout\exampleController2.js" />
+    <Content Include="Scripts\layout\exampleControllerAlexSpec.js" />
+    <Content Include="Scripts\layout\exampleControllerDanielSpec.js" />
     <Content Include="Scripts\layout\exampleControllerSpec.js" />
+    <Content Include="Scripts\layout\exampleControllerLiborSpec.js" />
+    <Content Include="Scripts\layout\Gusti_exampleControllerSpec.js" />
     <Content Include="Scripts\layout\layout.js" />
     <Content Include="Scripts\myFirstModule.js" />
     <Content Include="Scripts\r.js">
