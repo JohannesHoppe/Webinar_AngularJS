@@ -1,9 +1,5 @@
-
-
-
 requirejs.config({
     baseUrl: '/base', // instead of 'Scripts'
-    waitSeconds: 30,
     paths: {
         'jquery': 'jquery-1.11.1'
     },
@@ -33,5 +29,6 @@ requirejs.config({
         });
 
         return allTestFiles;
-    })()
+    })(),
+    callback: window.__karma__.start
 });

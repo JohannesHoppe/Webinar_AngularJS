@@ -1,8 +1,12 @@
+// used to verify that unit-tests are runnable
 define([], function () {
 
-    return {
-        say: function() {
-            return "Hello World";
-        }
+    var helloWorld = function() {
+        return "Hello World";
     }
+
+    return {
+        helloWorld: helloWorld
+    }
+
 });

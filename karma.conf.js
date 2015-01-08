@@ -7,6 +7,7 @@ module.exports = function(config) {
             'require.config.karma.js',
             { pattern: '**/*.js', included: false }
         ],
-        browsers: ['Chrome']
+        browsers: ['Chrome'],
+        autoWatch: false
     });
 };
