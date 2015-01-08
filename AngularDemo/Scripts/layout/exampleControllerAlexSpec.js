@@ -21,7 +21,7 @@ define([
             }
         }
 
-        var scope;
+        var scope, customerServicMock;
         var modalDialog;
 
         beforeEach(module('layout'));
@@ -30,7 +30,7 @@ define([
 
             scope = $rootScope.$new();
             
-            var customerServicMock = {
+            customerServicMock = {
                 refreshCustomers: function() {
                     return $http.get();
                 }
@@ -53,7 +53,7 @@ define([
 
             modalDialog = new modalDialogMock();
 
-            var customerServicMock = {
+            customerServicMock = {
                 refreshCustomers: function () {
                     return $http.get();
 
@@ -76,7 +76,11 @@ define([
             modalDialog.confirmTrue();
 
             scope.deleteCustomer(1);
-            //expect('a').toBe('b');
+            spyOn(customerServicMock, 'deleteCustomer').and.callThrough();
+
+            scope.deleteCustomer(13);
+
+            expect(customerServicMock.deleteCustomer).toHaveBeenCalledWith(13);
         });
     });
 
