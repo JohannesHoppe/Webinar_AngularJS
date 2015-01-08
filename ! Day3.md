@@ -33,6 +33,6 @@ Good examples: [AngularJS test Patterns](https://github.com/daniellmb/angular-te
 
 Add more test coverage! Test that $scope.deleteCustomer(1) forwards the call to customerService.deleteCustomer(1).
 
-AC: 
+##### AC: 
 - If its too complicated, you can uncomment $window.confirm
 - Optional: You might want to use http://jasmine.github.io/2.0/introduction.html > Spies!
