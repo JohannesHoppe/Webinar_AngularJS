@@ -1,12 +1,14 @@
 ﻿<div ng-init="loadCurrentCustomer()">
     <div>model.customer:</div>
     <pre>{{ model.customer | json : spacing}}</pre>
-    <div>What do you want to do with this guy?</div>
-    <div><button ng-click="deleteCustomer()">Delete him?</button></div>
-    <br />
-    <div>
-        <button ng-click="model.isUserEdited = true;" ng-show="!model.isUserEdited">Edit his details?</button>
-        <button ng-click="model.isUserEdited = false;" ng-show="model.isUserEdited">Do not edit his details</button>
+    <div ng-show="model.customer.Id != null">
+        <div>What do you want to do with this guy?</div>
+        <div><button ng-click="deleteCustomer()">Delete him?</button></div>
+        <br />
+        <div>
+            <button ng-click="model.isUserEdited = true;" ng-show="!model.isUserEdited">Edit his details?</button>
+            <button ng-click="model.isUserEdited = false;" ng-show="model.isUserEdited">Do not edit his details</button>
+        </div>
     </div>
     <br />
     <div ng-show="model.isUserEdited">
@@ -15,4 +17,6 @@
         <div>Email</div><input type="text" ng-model="model.customer.Mail" />
         <button ng-click="saveCustomer()">SaVe</button>
     </div>
+    <br />
+    <a href="/">Return to the list</a>
 </div>
