@@ -5,9 +5,16 @@ define([
 
     describe('exampleController', function () {
 
-        var scope;
+        var scope, customerId;        
 
-        beforeEach(module('layout'));
+        beforeEach(module('layout', function ($provide) {
+            var windowMock = {
+                confirm: function() { return true;  }
+            }
+
+            $provide.value('$window', windowMock);
+
+        }));
 
         beforeEach(inject(function ($rootScope, $controller, $http) {
 
@@ -15,6 +22,10 @@ define([
             
             var customerServicMock = {
                 refreshCustomers: function() {
+                    return $http.get();
+                },
+                deleteCustomer: function (value) {
+                    customerId = value;
                     return $http.get();
                 }
             }
@@ -29,6 +40,14 @@ define([
 
         it('should say hello', function () {
             expect(scope.model.text).toEqual('Hello World');
+        });
+
+        it('deleteCustomer should call customerService.deleteCustomer', function () {
+            customerId = null;
+            scope.deleteCustomer(1);
+            expect(customerId).toEqual(1);
+            
+
         });
     });
 
