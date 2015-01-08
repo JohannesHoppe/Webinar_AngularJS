@@ -1,6 +1,5 @@
 module.exports = function(config) {
     config.set({
-
         basePath: 'AngularDemo/Scripts',
         frameworks: ['jasmine', 'requirejs'],
         files: [
@@ -8,6 +7,6 @@ module.exports = function(config) {
             { pattern: '**/*.js', included: false }
         ],
         browsers: ['Chrome'],
-        autoWatch: false
+        reporters: ['nested']
     });
 };
