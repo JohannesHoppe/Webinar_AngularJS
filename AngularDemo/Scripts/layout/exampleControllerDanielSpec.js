@@ -34,8 +34,7 @@ define([
                 $window: windowMock
             });
 
-            spyOn(customerServicMock, 'deleteCustomer').and.returnValue($http.get());
-            scope.deleteCustomer(1);
+            spyOn(customerServicMock, 'deleteCustomer').and.callThrough();            
         }));
 
 
@@ -44,10 +43,12 @@ define([
         });
 
         it("should call customerService.deleteCustomer", function () {
+            scope.deleteCustomer(1);
             expect(customerServicMock.deleteCustomer).toHaveBeenCalled();
         });
 
         it("should call delete customer with value 1", function () {
+            scope.deleteCustomer(1);
             expect(customerServicMock.deleteCustomer).toHaveBeenCalledWith(1);
             
         });
