@@ -11,23 +11,20 @@
 
                 describe('customerService', function () {
 
-                    var customerServiceSUT;
+                    var customerService;
 
-                    beforeEach(inject(function ($http, customerService) {
-                        customerServiceSUT = customerService;
+                    beforeEach(inject(function ($http, _customerService_) {
+
+                        customerService = _customerService_;
                         spyOn($http, 'get').and.callThrough();
 
                     }));
 
-                    xit('should call an all GET requests http://ex.extjs-kochbuch.de/api/Customer', function () {                        
-                        customerServiceSUT.refreshCustomers();
+                    it('should call an all GET requests http://ex.extjs-kochbuch.de/api/Customer', inject(function ($http) {
+                        customerService.refreshCustomers();
                         expect($http.get).toHaveBeenCalledWith('http://ex.extjs-kochbuch.de/api/Customer');
-
-                    });
+                    }));
                 });
-
             });
-
-
         });
     });

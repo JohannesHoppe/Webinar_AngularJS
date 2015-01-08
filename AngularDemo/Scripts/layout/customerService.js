@@ -8,8 +8,6 @@ define([
 
             var baseApi = 'http://ex.extjs-kochbuch.de/api/Customer';
 
-            var $events = $({});
-
             var refreshCustomers = function () {
                 return $http.get(baseApi);             
             }

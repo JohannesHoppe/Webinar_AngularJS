@@ -7,31 +7,22 @@ define([
 
             describe('As Johannes I want to see a list of customer.', function() {
 
-                ddescribe('customerService', function () {
-
-                    var $httpBackend;
+                describe('customerService', function () {
 
                     beforeEach(module('layout'));
 
-                    beforeEach(inject(function($injector) {
-
-                        $httpBackend = $injector.get('$httpBackend');
-
-                    }));
-
-                    afterEach(function () {
+                    afterEach(inject(function ($httpBackend) {
                         $httpBackend.verifyNoOutstandingExpectation();
                         $httpBackend.verifyNoOutstandingRequest();
-                    });
+                    }));
 
 
-                    it('should call an all GET requests http://ex.extjs-kochbuch.de/api/Customer', inject(function (customerService) {
-                        // expect(false).toEqual(false);
+                    it('should call an all GET requests http://ex.extjs-kochbuch.de/api/Customer', inject(function (customerService, $httpBackend) {
+                        
                         expect(customerService).toBeDefined();
                         $httpBackend.expectGET('http://ex.extjs-kochbuch.de/api/Customer').respond("ok");
                         customerService.refreshCustomers();                        
                         $httpBackend.flush();
-
                     }));
                 });
 

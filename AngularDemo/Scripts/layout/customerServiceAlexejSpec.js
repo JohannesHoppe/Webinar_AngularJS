@@ -1,10 +1,9 @@
 ﻿define([
     'angular',
     'angular-mocks',
-    'layout/customerService'], function (sut) {
+    'layout/customerService'], function () {
 
         describe('customerService', function () {
-
             
             beforeEach(module('layout'));
 
@@ -13,8 +12,5 @@
                 customerService.refreshCustomers();
                 expect($http.get).toHaveBeenCalledWith("http://ex.extjs-kochbuch.de/api/Customer");
             }));
-
-
         });
-
     });

@@ -1,7 +1,6 @@
 define([
     'angular',
-    'angular-mocks',
-    'layout/exampleController'], function (sut) {
+    'angular-mocks'], function () {
 
         describe('CRM milestone 1, sprint 20', function () {
 
