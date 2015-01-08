@@ -8,6 +8,8 @@
 			</i> Search
 </button>
 
+
+
 <table st-table="displayedCollection" st-safe-src="customers" class="table table-striped">
 	<thead>
 	<tr>
@@ -18,13 +20,13 @@
 	</tr>
 	</thead>
 	<tbody>
-     
+        
         <tr ng-if="addNew">
             <td >
                 <!--<input class="form-control" type="number" ng-model="newCustomer.Id" />-->
             </td>
             <td>
-                <input class="form-control" type="text" ng-model="newCustomer.FirstName" />
+                <input class="form-control" type="text" ng-model="newCustomer.FirstName" required/>
             </td>
 
             <td>
@@ -55,8 +57,12 @@
             <div ng-if="customer.$edit"><input class="form-control" type="text" ng-model="customer.LastName" /></div>
 		</td>
 		<td>
-           <span ng-if="!customer.$edit">{{customer.Mail}}</span>
+          <button ng-if="!customer.$edit" class="btn btn-sm" popover-placement="top" popover="{{customer.Mail}}" type="button">
+				<i class="glyphicon glyphicon-eye-open"></i>
+			</button>
+           <a ng-if="!customer.$edit" ng-href="mailto:{{customer.Mail}}">email</a>
            <div ng-if="customer.$edit"><input class="form-control" type="email" ng-model="customer.Mail" /></div>
+           
 		</td>
         <td>
             <a ng-if="!customer.$edit" href="" class="btn btn-sm btn-primary glyphicon glyphicon-pencil" ng-click="customer.$edit = true"></a>
