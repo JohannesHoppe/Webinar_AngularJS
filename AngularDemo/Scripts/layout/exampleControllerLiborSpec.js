@@ -3,7 +3,7 @@ define([
     'angular-mocks',
     'layout/exampleController'], function (sut) {
 
-    ddescribe('Libors exampleController', function () {
+    describe('Libors exampleController', function () {
 
         var scope, deletedId;
 
