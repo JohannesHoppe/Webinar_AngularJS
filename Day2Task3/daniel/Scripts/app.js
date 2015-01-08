@@ -4,7 +4,8 @@ define([
     'layout/layout',
     'layout/exampleController',
     'layout/exampleController2',
-    'layout/customerDetail'
+    'layout/customerDetail',
+    'layout/customerService'
 ], function(angular) {
 
     angular.module('app', ['ngRoute', 'layout'])

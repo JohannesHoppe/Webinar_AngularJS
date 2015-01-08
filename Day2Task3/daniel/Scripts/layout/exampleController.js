@@ -5,30 +5,28 @@ define([
         
 
     angular.module('layout')
-        .controller('exampleController', ['$scope', '$http', function ($scope, $http) {
+        .controller('exampleController', ['$scope', '$http', 'customerService', function ($scope, $http, customerService) {
 
             var baseApi = 'http://ex.extjs-kochbuch.de/api/Customer';
 
-            var refreshCustomers = function(){
-                $http.get('http://ex.extjs-kochbuch.de/api/Customer').
-                    success(function (data, status, headers, config) {
-
+            var refreshCustomers = function () {
+                customerService.refreshCustomers()
+                    .success(function (data, status, headers, config) {
                         $scope.customers = data.Data;
-                    }).
-                    error(function (data, status, headers, config) {
-                    });
+                    })
+                    .error(function (data, status, headers, config) {
+                    });               
             }
 
             var deleteCustomer = function (customerId) {
-                $http.delete(baseApi + "/" + customerId).
-                success(function (data, status, headers, config) {
-                    if (status == 200) {
-                        refreshCustomers();
-                    }
-                    
-                }).
-                error(function (data, status, headers, config) {
-                });
+                customerService.deleteCustomer(customerId)
+                    .success(function (data, status, headers, config) {
+                        if (status == 200) {
+                            refreshCustomers();
+                        }                    
+                    })
+                    .error(function (data, status, headers, config) {
+                    });
             }
 
             $scope.model = {
