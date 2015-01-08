@@ -3,9 +3,8 @@ define([
     'layout/layout'
 ], function(angular) {
         
-
     angular.module('layout')
-        .controller('exampleController', ['$scope', '$http', 'customerService', function ($scope, $http, customerService) {
+        .controller('exampleController', ['$scope', 'customerService', function ($scope, customerService) {
 
             var baseApi = 'http://ex.extjs-kochbuch.de/api/Customer';
 

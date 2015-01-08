@@ -22,3 +22,8 @@ To install all npm packages we can use `npm install` and use the default file, c
     "private": true
 }
 ```
+
+Slides: http://johanneshoppe.github.io/JsBestPractices/#/5
+
+Good examples: [AngularJS test Patterns](https://github.com/daniellmb/angular-test-patterns)
+
