@@ -3,31 +3,19 @@ define([
     'angular-mocks',
     'layout/exampleController'], function (sut) {
 
-    describe('exampleController', function () {
+    ddescribe('exampleController', function () {
 
-        var scope, customerId;        
+        var scope, customerServicMock;
 
-        beforeEach(module('layout', function ($provide) {
-            var windowMock = {
-                confirm: function() { return true;  }
-            }
+        beforeEach(module('layout'));
 
-            $provide.value('$window', windowMock);
-
-        }));
-
-        beforeEach(inject(function ($rootScope, $controller, $http) {
+        beforeEach(inject(function ($rootScope, $controller, $http, $window) {
 
             scope = $rootScope.$new();
             
-            var customerServicMock = {
-                refreshCustomers: function() {
-                    return $http.get();
-                },
-                deleteCustomer: function (value) {
-                    customerId = value;
-                    return $http.get();
-                }
+            customerServicMock = {
+                refreshCustomers: function() { return $http.get(); },
+                deleteCustomer: function () { return $http.get(); }
             }
 
             $controller('exampleController', {
@@ -35,18 +23,20 @@ define([
                 customerService: customerServicMock
             });
 
+            $window.confirm = function() { return true; }
         }));
-
 
         it('should say hello', function () {
             expect(scope.model.text).toEqual('Hello World');
         });
 
         it('deleteCustomer should call customerService.deleteCustomer', function () {
-            customerId = null;
-            scope.deleteCustomer(1);
-            expect(customerId).toEqual(1);
             
+            spyOn(customerServicMock, 'deleteCustomer').and.callThrough();
+
+            scope.deleteCustomer(13);
+
+            expect(customerServicMock.deleteCustomer).toHaveBeenCalledWith(13);
 
         });
     });
