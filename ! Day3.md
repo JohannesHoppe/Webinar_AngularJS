@@ -49,3 +49,5 @@ You got a behavioural specification, please write the test now!
 
 HELP:
 https://docs.angularjs.org/api/ngMock/service/$httpBackend
+
+This must be Unit-Test! (NOT an integration test!)
