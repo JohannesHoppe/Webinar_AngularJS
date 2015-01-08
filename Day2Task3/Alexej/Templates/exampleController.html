@@ -1,11 +1,14 @@
 ﻿<h1 ng-bind="model.text"></h1>
 
-<button ng-click="changeText()">Test</button>
-
 <div class="table-responsive">
     <table class="table table-striped">
         <thead>
             <tr>
+		        <!--Buttons column-->
+				<th style="width: 100px;">
+					<!--Add-->
+					<div class="btn-toolbar"><i class="btn glyphicon glyphicon-plus" ng-click="addCustomer()" title="Add"></i></div>
+				</th>			
                 <th>#</th>
                 <th>FirstName</th>
                 <th>LastName</th>
@@ -14,6 +17,16 @@
         </thead>
         <tbody>
             <tr ng-repeat="customer in customers">
+				<!--Buttons column-->
+				<td>
+					<div class="btn-toolbar">
+						<!--Edit + Remove-->
+						<div class="btn-group">
+							<i class="btn glyphicon glyphicon-pencil" ng-click="editCustomer(customer.Id)" title="Edit"></i>
+							<i class="btn glyphicon glyphicon-remove" ng-click="removeCustomer(customer.Id)" title="Remove"></i>
+						</div>
+					</div>
+				</td>			
                 <td ng-bind="customer.Id"></td>
                 <td ng-bind="customer.FirstName"></td>
                 <td ng-bind="customer.LastName"></td>
