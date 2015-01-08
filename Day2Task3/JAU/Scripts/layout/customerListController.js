@@ -10,12 +10,13 @@ define([
                 text: 'Hello World'
             }
 
-            $scope.changeText = function() {
-                $scope.model.text = "Hello AngularJS";
+            $scope.newCustomer = function() {
+                $location.path('detail/0');
             }
 
             $scope.gotoCustomerDetail = function (id) {
                 $location.path('/detail/' + id)
+                
             }
 
 
