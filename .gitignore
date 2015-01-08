@@ -1,8 +1,9 @@
 [Bb]in/
 [Oo]bj/
 packages/
-#node_modules/
+node_modules/
 Day2Task3/Alexej/node_modules/
+Day2Task3/Gusti/node_modules/
 Day2Task3/JAU/node_modules/
 *.user
 *.suo
