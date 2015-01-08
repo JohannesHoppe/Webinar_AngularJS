@@ -5,7 +5,7 @@ define([
 
         describe('CRM milestone 1, sprint 20', function () {
 
-            describe('As Johannes I want to see a list of customer.', function() {
+            describe('As Johannes I want to see a list of customers.', function() {
 
                 describe('customerService', function() {
 

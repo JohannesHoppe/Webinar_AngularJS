@@ -3,7 +3,7 @@ define([
     'angular-mocks',
     'layout/exampleController'], function (sut) {
 
-    ddescribe('exampleController', function () {
+    describe('exampleController', function () {
 
         var scope, customerServicMock;
 
