@@ -4,7 +4,7 @@ define([
 ], function(angular) {
         
     angular.module('layout')
-        .controller('exampleController', ['$scope', 'customerService', function ($scope, customerService) {
+        .controller('exampleController', ['$scope', 'customerService', '$window', function ($scope, customerService, $window) {
 
             var baseApi = 'http://ex.extjs-kochbuch.de/api/Customer';
 
@@ -37,7 +37,7 @@ define([
             }
 
             $scope.deleteCustomer = function (customerId) {
-                if (confirm("Are you sure you wanna delete this guy?"))
+                if ($window.confirm("Are you sure you wanna delete this guy?"))
                     deleteCustomer(customerId);
             }
 

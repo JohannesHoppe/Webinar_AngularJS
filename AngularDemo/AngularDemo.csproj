@@ -133,6 +133,8 @@
     <Content Include="Scripts\angular.js" />
     <Content Include="Scripts\app.js" />
     <Content Include="Scripts\domReady.js" />
+    <Content Include="Scripts\helloWorld.js" />
+    <Content Include="Scripts\helloWorldSpec.js" />
     <Content Include="Scripts\init.js" />
     <None Include="Scripts\jquery-1.11.1.intellisense.js">
       <DependentUpon>jquery-1.11.1.js</DependentUpon>
@@ -142,6 +144,7 @@
     <Content Include="Scripts\layout\customerService.js" />
     <Content Include="Scripts\layout\exampleController.js" />
     <Content Include="Scripts\layout\exampleController2.js" />
+    <Content Include="Scripts\layout\exampleControllerSpec.js" />
     <Content Include="Scripts\layout\layout.js" />
     <Content Include="Scripts\myFirstModule.js" />
     <Content Include="Scripts\r.js">
@@ -150,6 +153,7 @@
     <Content Include="Scripts\require.config.js">
       <DependentUpon>require.js</DependentUpon>
     </Content>
+    <Content Include="Scripts\require.config.karma.js" />
     <Content Include="Scripts\require.js" />
     <Content Include="Templates\customerDetail.html" />
     <Content Include="Templates\exampleController.html" />

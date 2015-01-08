@@ -12,7 +12,7 @@ define([
         beforeEach(inject(function ($rootScope, $controller, $http) {
 
             scope = $rootScope.$new();
-
+            
             var customerServicMock = {
                 refreshCustomers: function() {
                     return $http.get();
