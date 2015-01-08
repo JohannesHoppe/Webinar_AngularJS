@@ -3,6 +3,7 @@
 packages/
 #node_modules/
 Day2Task3/Alexej/node_modules/
+Day2Task3/JAU/node_modules/
 *.user
 *.suo
 _Resharper*
