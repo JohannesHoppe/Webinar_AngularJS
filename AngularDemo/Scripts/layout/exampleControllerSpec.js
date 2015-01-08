@@ -26,6 +26,7 @@ define([
             $window.confirm = function() { return true; }
         }));
 
+
         it('should say hello', function () {
             expect(scope.model.text).toEqual('Hello World');
         });
